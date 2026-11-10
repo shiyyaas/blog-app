@@ -127,8 +127,8 @@ export default function RootLayout({
                     <span className="inline-block w-4 h-4 rounded-full bg-[var(--color-primary)]" />
                     <span className="font-bold text-2xl tracking-tight">Shiyaseee</span>
                   </div>
-                  <p className="type-body-sm text-[var(--color-ink)] opacity-80 leading-relaxed max-w-xs">
-                    A confident black-and-white editorial frame interrupted by oversized, hand-cut pastel color blocks.
+                  <p className="type-body-sm text-[var(--color-ink)] opacity-80 leading-relaxed">
+                    An independent editorial journal exploring the intersection of design systems, typography, and web engineering.
                   </p>
                 </div>
 

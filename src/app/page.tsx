@@ -96,7 +96,7 @@ export default async function HomePage() {
               </h2>
             </div>
             <p className="type-body-sm opacity-70 max-w-sm">
-              Instantaneous client-side filtering powered by TanStack Query, hydrated from server-rendered snapshots.
+              Explore our complete collection of essays, deep-dives, and tutorials on modern frontend architecture.
             </p>
           </div>
 
