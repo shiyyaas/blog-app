@@ -1,3 +1,11 @@
+.agents/
+        .claude/
+        .codex/
+        .cursor/
+        .kimi-code/
+        .kimi/
+        .mcp.json
+        .qarinah/
 node_modules
 .next
 out
