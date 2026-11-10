@@ -68,13 +68,13 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) {
     return {
-      title: 'Story Not Found — Figma Editorial',
+      title: 'Story Not Found — Shiyaseee Editorial',
       description: 'The requested editorial publication could not be found.',
     };
   }
 
   return {
-    title: `${post.title} — Figma Editorial`,
+    title: `${post.title} — Shiyaseee Editorial`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
