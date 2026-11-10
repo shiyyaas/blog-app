@@ -8,7 +8,7 @@ export default function NotFound() {
         <span className="type-caption text-[var(--color-ink)] opacity-60 mb-2 block font-semibold">
           ERROR 404
         </span>
-        <h1 className="type-display-lg text-4xl font-bold mb-4 text-[var(--color-ink)]">
+        <h1 className="type-display-lg font-bold mb-4 text-[var(--color-ink)]">
           Publication Not Found
         </h1>
         <p className="type-body text-[var(--color-ink)] opacity-75 mb-8">

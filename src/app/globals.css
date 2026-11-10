@@ -184,6 +184,13 @@ body {
   transform: scale(0.98);
 }
 
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-magenta-promo:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .btn-secondary {
   background-color: var(--color-canvas);
   color: var(--color-ink);
@@ -231,4 +238,14 @@ body {
 
 .btn-magenta-promo:hover {
   opacity: 0.9;
+}
+
+/* Hide scrollbar utility for horizontal tab scrolling */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

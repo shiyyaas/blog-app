@@ -43,13 +43,9 @@ export default function BlogFeed({ initialPosts }: BlogFeedProps) {
   // TanStack React Query hydrating the SSR payload
   const { data: posts = initialPosts } = useQuery<BlogPost[]>({
     queryKey: ['posts'],
-    queryFn: async () => {
-      // In production, this can revalidate from the API endpoint
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=12');
-      if (!res.ok) return initialPosts;
-      return initialPosts;
-    },
+    queryFn: async () => initialPosts,
     initialData: initialPosts,
+    staleTime: Infinity,
   });
 
   // Real-time live filtering by title, excerpt, body, and category
@@ -169,7 +165,7 @@ export default function BlogFeed({ initialPosts }: BlogFeedProps) {
           return (
             <article
               key={post.id}
-              className={`group relative flex flex-col justify-between bg-[var(--color-canvas)] border border-[var(--color-hairline)] rounded-[var(--radius-lg)] p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:border-[var(--color-primary)]/40 ${
+              className={`group relative flex flex-col justify-between bg-[var(--color-canvas)] border border-[var(--color-hairline)] rounded-[var(--radius-lg)] p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:border-[var(--color-primary)]/40 focus-within:ring-2 focus-within:ring-[var(--color-primary)] ${
                 isFeatured ? 'md:col-span-2 lg:col-span-3 lg:p-8' : ''
               }`}
             >
@@ -182,7 +178,7 @@ export default function BlogFeed({ initialPosts }: BlogFeedProps) {
                     <Tag className="w-3 h-3" aria-hidden="true" />
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-3 type-caption opacity-60">
+                  <div className="flex items-center gap-3 type-caption opacity-80">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" aria-hidden="true" />
                       {post.formattedDate}
@@ -197,19 +193,19 @@ export default function BlogFeed({ initialPosts }: BlogFeedProps) {
                 {/* Article Title */}
                 <h3
                   className={`${
-                    isFeatured ? 'type-display-lg text-3xl md:text-4xl' : 'type-card-title text-2xl'
+                    isFeatured ? 'type-display-lg text-2xl sm:text-3xl md:text-4xl' : 'type-card-title text-xl sm:text-2xl'
                   } text-[var(--color-ink)] mb-3 group-hover:underline underline-offset-4 line-clamp-2`}
                 >
                   <Link
                     href={`/posts/${post.id}`}
-                    className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded-[var(--radius-xs)] after:absolute after:inset-0"
+                    className="focus:outline-none rounded-[var(--radius-xs)] after:absolute after:inset-0"
                   >
                     {post.title}
                   </Link>
                 </h3>
 
                 {/* Excerpt Body */}
-                <p className="type-body text-[var(--color-ink)] opacity-75 line-clamp-3 mb-6">
+                <p className="type-body text-[var(--color-ink)] opacity-80 line-clamp-3 mb-6">
                   {post.excerpt}
                 </p>
               </div>
@@ -230,7 +226,7 @@ export default function BlogFeed({ initialPosts }: BlogFeedProps) {
                     <p className="type-body-sm font-semibold leading-tight text-[var(--color-ink)]">
                       {post.author.name}
                     </p>
-                    <p className="type-caption opacity-60">{post.author.role}</p>
+                    <p className="type-caption opacity-80">{post.author.role}</p>
                   </div>
                 </div>
 

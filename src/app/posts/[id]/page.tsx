@@ -149,12 +149,12 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
 
             {/* Editorial Title */}
-            <h1 className="type-display-xl text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-normal tracking-tight leading-[1.05] mb-6">
+            <h1 className="type-display-xl font-normal tracking-tight mb-6">
               {post.title}
             </h1>
 
             {/* Excerpt Lead Paragraph */}
-            <p className={`type-subhead text-xl sm:text-2xl ${colorTheme.subtext} max-w-3xl leading-relaxed`}>
+            <p className={`type-subhead ${colorTheme.subtext} max-w-3xl leading-relaxed`}>
               {post.excerpt}
             </p>
 
@@ -210,7 +210,7 @@ export default async function PostPage({ params }: PostPageProps) {
             ))}
 
             {/* Editorial Blockquote */}
-            <blockquote className="my-10 pl-6 border-l-4 border-[var(--color-primary)] py-2 italic font-serif text-2xl text-[var(--color-ink)]">
+            <blockquote className="my-10 pl-6 border-l-4 border-[var(--color-primary)] py-2 italic type-subhead text-[var(--color-ink)]">
               &ldquo;The interface never reaches for shadows or gradients to do the work that color blocks and confident typography already do.&rdquo;
             </blockquote>
 
